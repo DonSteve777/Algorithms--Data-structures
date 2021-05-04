@@ -1,0 +1,52 @@
+Semana 6 DA
+
+Conjuntos Disjuntos
+	Para representar un relación de equivalencia, ( reflexiva, simétrica y transitiva) entre elementos
+	También dinámica: van apareciendo nuevas relaciones 
+	
+	PARTICIÓN: series de conjuntos disjuntos cuya unión es total.
+	
+		Búsqueda rápida
+			vector de elementos representantes. 
+			Desventaja: unión coste lineal: recorrer el vector
+			
+		unión rápida:
+			Mediante árboles, por su fácil unión. Raices de los árboles-> Elementos representantes
+					 
+		Unión rápida por tamaños: 
+			para que no se convierta en lineal al unir: el pequeño pasa a ser el hijo.
+			
+		Compresión de caminos
+	
+	COSTE
+		Unión de raíz: O(1)
+		búsqueda (de representante): profundidad del elemento buscado. Altura máxima: O(log N) 
+		Explicación: https://youtu.be/RqcwQS_0mcA?t=612
+					
+			M BÚSQUEDAS & UNIONES EN PARTICIONES DE N ELEMENTOS	
+				búsqueda rápida: N*M
+				unión rápida: N*M
+				unión rápida por tam : N + M log N
+				Unión rápida Con compresión de caminos: N + M log N
+				compresión de caminos y unión rápida por tam: N + M lg* N
+				
+GRAFOS VALORADOS
+	objetos arista
+	listas de aristas
+		
+				
+Árbol de recubrimiento de coste mínimo
+	es árbol: conexo y acíclico
+	es de recubrimiento: alcanza todos los vértices
+	V-1 aristas
+	añadir una arista lo hace cíclico, y eliminar rompe la componente conexa
+
+	Propiedad del corte:
+		para cualquier corte la arista mínima que cruza el corte pertenece siempre al a.r.m.
+	
+	Algoritmo de kruskal: ejemplo de voraz
+		vamos considerando las aristas de menor a mayor, y si no crean ciclos, las añadimos al arm
+		paramos cuando tengamos v-1 aristas
+		
+	
+	

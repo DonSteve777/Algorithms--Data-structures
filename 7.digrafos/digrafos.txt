@@ -1,0 +1,33 @@
+Semana 7
+
+DIGRAFOS VALORADOS
+	grafos valorados y dirigidos
+	
+	Representanción
+		Listas de aristas de ayacentes (punteros a listas para no repetir
+		info)
+		
+	Caminos de Coste Mínimo -> DIJKSTRA
+		Desde un origen único
+			El camino se almacena en un árbol de aristas-> arbolescencia
+				aristas dirigidas y tienen raíz
+				dist[v]
+				ulti[v]
+			Opreación Relajación de aristas
+				se trata de ir actualizando las distancias conocidas
+				con nuevas aristas que acorten los caminos
+				
+				Algoritmo pa caminos mínimos: hacer esto con las aristas reiterada
+				mente hasta que no sea posible relajar más
+		DIJKSTRRA
+			Voraz. 
+			Considera los vértices en orden creciente de distancias desde
+			el origen 
+			Añade al árbol y relaja todas las aristas que salen de él
+			IndexPQ: nos interesan colas de prioridad cambiantes: vértices 
+				con la distancia como prioridad. 
+			
+		
+		
+	
+	
