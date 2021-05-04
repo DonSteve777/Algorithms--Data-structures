@@ -1,33 +1,16 @@
-
-// Nombre y Apellidos
-
-// Comentario general sobre la solución,
-// explicando cómo se resuelve el problema
-
 #include <iostream>
 #include <fstream>
-#include <...>
+using namespace std;
 
-#include "..."  // propios o los de las estructuras de datos de clase
 
-// función que resuelve el problema
-// comentario sobre el coste, O(f(N)), donde N es ...
-Solucion resolver(Datos datos) {
-   ...
-}
 
-// resuelve un caso de prueba, leyendo de la entrada la
-// configuración, y escribiendo la respuesta
 bool resuelveCaso() {
    
-   // leer los datos de la entrada
    
-   if (!std::cin)  // fin de la entrada
+   if (!std::cin)  
       return false;
    
-   Solucion sol = resolver(datos);
    
-   // escribir sol
    
    return true;
 }
