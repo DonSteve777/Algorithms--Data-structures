@@ -1,0 +1,18 @@
+árbol de búsqueda binaria
+	inserción, búsqueda y borrado en tiempo O(log N)
+	
+AVL
+	árbol autoequilibrado
+		profundidad logarítmica en el caso peor
+		actualizaciones m,ás lentas
+		accesos más rápidos
+		
+rotaciones tiempo constante
+
+árbol de altura h tiene fib (h -2) nodos
+
+Número mínimo de nodos de un árbol AVL con altura h.
+Si h=0, entonces el árbol contiene 1 sólo nodo, N(0)= 1
+Si h=1, el árbol consta sólo de dos nodos (la raíz y un hijo), N(1)= 2
+Si hɭ, en el peor caso un subárbol tendrá altura (h-1) y el otro (h-2), luego N(h)= N(h-1) + N(h-2) +1
+Tenemos una sucesión parecida a la de Fibonacci (árboles de Fibonacci).

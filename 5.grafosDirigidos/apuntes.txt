@@ -1,0 +1,14 @@
+Componente fuertmente conexa
+	engloba a los vértices que salen y entran en un mismo vértice inicial
+
+Ordenación topológica:
+	si no hay ciclos, se puede poner de forma que cada vértice se dirija a otro posterior en la ordenación
+	
+	Postorden inverso de un grafo acíclico: es una ordenación topológica
+		En preorden se añaden los nodos a la lista de ordenación según se van visitando
+		En postorden, al volver de la recursión, cunado ya se han visitado sus hijos.
+		
+Ciclos dirigidos
+	Detección mediante recorrido en profundidad
+		Si volvemos a un vértice apilado (ojo, que no visitado), hay ciclo
+	

@@ -1,0 +1,28 @@
+Monticulos para implementar colas de prioridad
+
+push -> log N
+pop -> log N
+
+arbol completo
+	arbol semicompleto
+		tineen propiedades interesant4es para la implementacion de la cola
+		
+1. Un árbol binario completo de altura h≥1 tiene 2^(i−1) nodos en el nivel i, para todo i entre 1 y h.
+2. Un árbol binario completo de altura h≥0 tiene 2^h −1 nodos.
+3. La altura de un árbol binario semicompleto formado por n nodos es [logn]+1	[parte entera]
+
+monticulo de minimos
+	arbol semicompleto donde la raiz es <= que sus 2 hijos y a la vez hijo izq e hijo der son monticulos
+	
+	Se guardan en el vector por niveles del arbol
+	
+		i
+	   /  \
+	2i    2i+1
+	
+	Saber si existe un nodo?
+		comparar el i de su padre con el numero de elementos
+	
+	antes(a, b)
+		a mas prioritario
+		

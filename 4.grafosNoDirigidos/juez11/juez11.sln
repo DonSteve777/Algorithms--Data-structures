@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27004.2005
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "juez11", "juez11\juez11.vcxproj", "{A220B13C-05EF-40BD-BBD9-2BF1ABD5270B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A220B13C-05EF-40BD-BBD9-2BF1ABD5270B}.Debug|x64.ActiveCfg = Debug|x64
+		{A220B13C-05EF-40BD-BBD9-2BF1ABD5270B}.Debug|x64.Build.0 = Debug|x64
+		{A220B13C-05EF-40BD-BBD9-2BF1ABD5270B}.Debug|x86.ActiveCfg = Debug|Win32
+		{A220B13C-05EF-40BD-BBD9-2BF1ABD5270B}.Debug|x86.Build.0 = Debug|Win32
+		{A220B13C-05EF-40BD-BBD9-2BF1ABD5270B}.Release|x64.ActiveCfg = Release|x64
+		{A220B13C-05EF-40BD-BBD9-2BF1ABD5270B}.Release|x64.Build.0 = Release|x64
+		{A220B13C-05EF-40BD-BBD9-2BF1ABD5270B}.Release|x86.ActiveCfg = Release|Win32
+		{A220B13C-05EF-40BD-BBD9-2BF1ABD5270B}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A0B3F615-1264-4951-90FA-228AB69B1C30}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,31 @@
+2
+3 2
+1 2
+2 3
+10 10
+1 2
+3 1
+3 4
+5 4
+3 5
+4 6
+5 2
+7 10
+9 10
+8 9bool resuelveCaso() {
+  int V, A;
+   // leer los datos de la entrada
+   cin >> V;
+   if (!std::cin)  // fin de la entrada
+      return false;
+    cin >> A;
+    Grafo grafo(V);
+    int a, b; //aristas
+    for (int i =0; i < A; ++i){
+      cin >> a >> b;
+      grafo.ponArista(a-1, b-1);
+    }
+    Amigos grupos = Amigos(grafo);
+	cout << grupos.getGrupoMasGrande() << "\n";
+   return true;
+}

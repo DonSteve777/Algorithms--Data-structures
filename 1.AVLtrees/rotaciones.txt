@@ -1,0 +1,34 @@
+https://elibro.net/es/ereader/universidadcomplutense/108459
+
+El nodo desequilibrado es X 
+	(el primer nodo de abajo a arriba que se haya desequilibrado)
+Casos
+1. Inserción en el subárbol izquierdo del hijo izquierdo de X
+2. Inserción en el subárbol derecho del hijo izquierdo de X
+3. Inserción en el subárbol izquierdo del hijo derecho de X
+4. Inserción en el subárbol derecho del hijo derecho de X
+
+Rotación simple
+1. rotación simple derecha derecha
+4. rotación simple izquierdo izquierdo
+
+   void rotaIzq(Link & r1) {
+      Link r2 = r1->dr;
+      r1->dr = r2->iz;	OJO a esto !!!!
+      r2->iz = r1;
+      r1->altura = std::max(altura(r1->iz), altura(r1->dr)) + 1;
+      r2->altura = std::max(altura(r2->iz), altura(r2->dr)) + 1;
+      r1 = r2;
+   }
+   
+
+Mantiene la altura del árbol antes de la inserción
+
+Rotación doble
+	1º rotación entre hijo y nieto de X
+	2º rotación entre X y nuevo hijo
+	
+	Para el caso 2. rotación izquiera derecha
+	Para el caso 3. rotaciónderecha izquierda
+	
+	Pueden haberse desequilibrado otros nodos
