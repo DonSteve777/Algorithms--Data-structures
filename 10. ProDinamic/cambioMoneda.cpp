@@ -132,8 +132,9 @@ inline std::ostream & operator<<(std::ostream & out, EntInf const& e) {
 
 
 /*
-Enfoque descendente
-
+/////////////////////////////////////////////////////////////////
+			Enfoque descendente
+/////////////////////////////////////////////////////////////////
 monedas(i, j) = min monedas para pagar j, 
 	considerando monedas de tipo 1 al n
 
@@ -158,7 +159,7 @@ EntInf cambio(vector<int> const& M, int C) {
 	for (int i = 1; i <= n; ++i) {
 		monedas[i][0] = 0;	//cantidad a pagar 0
 		for (int j = 1; j <= C; ++j)
-			if (M[i - 1] > j)
+			if (M[i - 1] > j)	// si el valor de la moneda actual es demasiado, no la considero
 				monedas[i][j] = monedas[i - 1][j];
 			else
 				monedas[i][j] = min(monedas[i - 1][j], monedas[i][j - M[i - 1]] + 1);
@@ -166,10 +167,9 @@ EntInf cambio(vector<int> const& M, int C) {
 	return monedas[n][C];
 }
 
-/////////////////////////////////////////////////////////////////
-//			versión para reconstruir la solución
-/////////////////////////////////////////////////////////////////
-
+/*////////////////////////////////////////////////////////////////
+			con reconstruiccion de la solución
+////////////////////////////////////////////////////////////////*/
 vector<int> cambio(vector<int> const& M, int C) {
 	int n = M.size();
 	Matriz<EntInf> monedas(n + 1, C + 1, Infinito);	//realmente sólo hay que inicialziar la primera fila
@@ -188,7 +188,7 @@ vector<int> cambio(vector<int> const& M, int C) {
 	if (monedas[n][C] != Infinity) {	//si hay solución
 		int i = n, j = C;
 		while (j > 0) {	//no se ha pagado todo
-			if (M[i - 1] <= j && monedas[i][j] != monedas[i - 1][j]) {
+			if (M[i - 1] <= j && monedas[i][j] != monedas[i - 1][j]) {	
 				//tomamos una de tipo i
 				sol.push_back(M[i - 1]);
 				j = j - M[i - 1];
@@ -202,8 +202,6 @@ vector<int> cambio(vector<int> const& M, int C) {
 }
 
 /*
-Enfoque ascendente
-
 complejidad en espacio C+1
 en tiempo n*C
 */
@@ -212,7 +210,7 @@ en tiempo n*C
 /////////////////////////////////////////////////////////////////
 vector<int> cambio(vector<int> const& M, int C) {
 	int n = M.size();
-	vector<int> monedas(C + 1, Infinity);
+	vector<int> monedas(C + 1, Infinito);
 	monedas[0] = 0 ;
 
 	for (int i = 1; i <= n; i++) {
@@ -222,7 +220,7 @@ vector<int> cambio(vector<int> const& M, int C) {
 	}
 	//reconstrucci�n de la soluci�n
 	vector<int> sol;
-	if (monedas[C] != Infinity) {
+	if (monedas[C] != Infinito) {
 		int i = n, j = C;
 		while (j > 0) {	// no se ha pagado todo
 			if (M[i - 1] <= j && monedas[j] == monedas[j - M[i - 1]] + 1) {

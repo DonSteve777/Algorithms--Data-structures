@@ -1,0 +1,24 @@
+
+
+invasores		40	50	91	200
+defensores		50	80	90	91
+
+voraz:			50	80	91		i ->	índice en vector defensores para el 80
+optima:			50	90	91		j ->	índice en el vector defensores para el 90
+
+Demostración
+	En la solución óptima se ha seleccionado el tercer candidato (90) en
+	lugar del segundo. 
+	Por cómo funciona mi algoritmo, j > i, porque mi voraz selecciona el primero que cabe
+	para una ciudad, ya que están ordenados de menor a mayor. 
+	Se cumple que:
+		i < j => defensores[i] <= defensores[j] 
+		como se cumplen las desigualdades 
+			defensores[i] >= invasores[k] 
+			defensores[j] >= invasores[k]
+			Puedo sustituir en la solución óptima el 90 por el 80.
+		Se puede iterar este proceso hasta igualr ambas soluciones.
+
+
+
+	

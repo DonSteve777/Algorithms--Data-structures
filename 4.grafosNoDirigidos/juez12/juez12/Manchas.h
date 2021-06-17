@@ -9,7 +9,7 @@ class Manchas {
 public:
 	Manchas(Mapa const& M) : F(M.size()), C(M[0].size()),
 		visit(F, vector<bool>(C, false)), num(0), maxim(0){
-		
+		// v+A + F*C
 		for (int i = 0; i < F; ++i) {
 			for (int j=0; j < C; ++j) {
 				if (!visit[i][j] && M[i][j]=='#') {	//nueva mancha
@@ -41,7 +41,7 @@ private:
 
 	const vector<pair<int, int>> dirs = { {1,0},{0,1},{-1,0},{0,-1} };
 
-	int dfs(Mapa const& M, int i, int j) {
+	int dfs(Mapa const& M, int i, int j) {	//O(V+A)
 		visit[i][j] = true;
 		int tam = 1;
 		for (auto d : dirs) {

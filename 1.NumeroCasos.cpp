@@ -6,25 +6,15 @@
 
 #include <iostream>
 #include <fstream>
-#include <...>
 
-#include "..."  // propios o los de las estructuras de datos de clase
-
-// función que resuelve el problema
-// comentario sobre el coste, O(f(N)), donde N es ...
-Solucion resolver(Datos datos) {
-   ...
-}
 
 // resuelve un caso de prueba, leyendo de la entrada la
 // configuración, y escribiendo la respuesta
 void resuelveCaso() {
    
-   // leer los datos de la entrada
    
    Solucion sol = resolver(datos);
    
-   // escribir solución
 }
 
 int main() {

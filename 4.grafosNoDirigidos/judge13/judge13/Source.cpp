@@ -2,6 +2,7 @@
 #include <fstream>
 #include "Grafo.h"
 #include <queue>
+#include <algorithm>
 
 using namespace std;
 
@@ -9,7 +10,6 @@ using namespace std;
 #define INF 1000000
 
 typedef vector<int> vi;
-
 
 class Bipartite {
 public:
