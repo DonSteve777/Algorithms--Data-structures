@@ -38,7 +38,7 @@ Mejor que implementación con vectores
 		completo	2^i-1 nodos en nivel i
 		semicompleto	[log n] +1	([parte entera])
 
-MONTICULO de mmínimos
+MONTICULO de mínimos
 	Árbol binario semicompleto
 	raíz <= hijo izq
 		 >	     der

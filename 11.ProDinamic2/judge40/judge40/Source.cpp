@@ -34,27 +34,6 @@ EntInf min(EntInf a, EntInf b) {
 		return b;
 }
 
-
-EntInf patinAscendente(string const& patitos,) {
-	int N = patitos.length();
-	Matriz<EntInf> patin
-	for (int i = 0; i < N; i++)
-	{
-		for (int j = 0; j <= i ; j++)
-		{
-			if (i > j) patin[i][j] = 0;
-			else if (i == j) patin[i][j] = 0;
-			else if (patitos[i] == patitos[j])
-				patin[i][j] = patin[i + 1][j - 1];
-			else
-				patin[i][j] = (EntInf)1 + min(patin[i + 1][j],
-					patin[i][j - 1]);
-		}
-	}
-	
-	return patin[0][N-1];
-}
-
 string reconstruir(string const& patitos, Matriz<EntInf> const& patin, int i, int j) {
 	if (i > j)	return{};
 	if (i == j) return { patitos[i] };
@@ -65,17 +44,52 @@ string reconstruir(string const& patitos, Matriz<EntInf> const& patin, int i, in
 	else
 		return patitos[j] + reconstruir(patitos, patin, i, j - 1) + patitos[j];
 }
+
+
+void patinAscendente(string const& patitos) {
+	int N = patitos.length();
+	Matriz<EntInf> patin(N, N, Infinito);
+	int i = 0, j = 0;
+	int ik = N - 1, jk = 0;
+
+	while (ik >= 0 && jk <= N-1) {
+		while (i <= ik && j <= N) {
+			if (i > j) patin[i][j] = 0;
+			else if (i == j) patin[i][j] = 0;
+			else if (patitos[i] == patitos[j])
+				patin[i][j] = patin[i + 1][j - 1];
+			else
+				patin[i][j] = (EntInf)1 + min(patin[i + 1][j],
+					patin[i][j - 1]);
+			i++;
+			j++;
+		}
+		ik--;
+		jk++;
+		i = 0;
+		j = jk;
+	}
+	cout << patin[0][N - 1] << " ";
 /*
-string reconstruir(string const& patitos, Matriz<EntInf> const& patin,	int i, int j) {
-	if (i > j)	return{};
-	if (i == j) return { patitos[i] };
-	if (patitos[i] == patitos[j])
-		return patitos[i] + reconstruir(patitos, patin, i + 1, j - 1) + patitos[j];
-	else if (patin[i][j] == patin[i + 1][j] + 1)
-		return patitos[i] + reconstruir(patitos, patin, i + 1, j) + patitos[i];
-	else
-		return patitos[j] + reconstruir(patitos, patin, i, j - 1) + patitos[j];
-}*/
+	string sol = patitos;
+	i = 0, j = N - 1;
+	while (i != j && i <= N-1 && j >= 0 ) {
+		if ( patitos[i] == patitos[j] ) {
+			sol = patitos[i] + sol + patitos[j];
+			i++; j--;
+		}
+		else if (patin[i][j] == (EntInf)1 + patin[i + 1][j]) {
+			sol.
+			i++;
+		}
+		else {
+			sol = patitos[j] + sol + patitos[j];
+			j--;
+		}
+	}*/
+	cout << reconstruir(patitos, patin, 0, N - 1) << '\n';
+}
+
 
 
 bool resuelveCaso() {
@@ -88,8 +102,7 @@ bool resuelveCaso() {
 	//Matriz<EntInf> patin(N, N, Infinito);
 	//Matriz<int> patin(N, N, -1);
 	//cout << patin_rec(caso, 0, N - 1, patin) << " ";
-	cout << patinAscendente(caso, patin) << " ";
-	cout << reconstruir(caso, patin, 0, N - 1) << '\n';
+	patinAscendente(caso);
 
 	return true;
 }

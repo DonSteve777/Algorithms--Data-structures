@@ -19,7 +19,7 @@ int multiplica_marices(vector<int> const& D, Matriz<int> & P) {
 	Matriz<int> matrices(n + 1, n + 1, 0);	//aunque sólo usa de la 1 a la n
 	P = Matriz<int>(n + 1, n + 1, 0);
 
-	for(int d = 1; d <= n-1; ++d)	//recorrido en diagonales, no habitual
+	for(int d = 1; d <= n-1; ++d)	//recorrido en diagonales
 		for (int i = 1; i <= n - d; ++i) {	//elementos en la diagonal
 			int j = i + d;
 			matrices[i][j] = INF;	//no va a ser un valor de la tabla, ergo vale con una cte
